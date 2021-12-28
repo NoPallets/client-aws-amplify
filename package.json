@@ -1,0 +1,72 @@
+{
+  "name": "no-pallets",
+  "version": "1.0.2",
+  "description": "Next + Apollo + Hasura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ./ --ext js,jsx,ts,tsx",
+    "format": "prettier --write .",
+    "graphql:types": "graphql-codegen --config codegen.yml -r dotenv/config"
+  },
+  "keywords": [
+    "nextjs",
+    "graphql",
+    "postgres"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/client": "^3.0.0",
+    "aws-sdk": "^2.853.0",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^15.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "next": "^12.0.4",
+    "next-apollo": "^5.0.4",
+    "next-auth": "^3.29.0",
+    "next-fonts": "^1.5.1",
+    "next-server": "^9.0.5",
+    "node-sass": "5.0.0",
+    "react": "^17.0.2",
+    "react-content-loader": "^6.0.3",
+    "react-dom": "^17.0.2",
+    "swiper": "^6.5.8",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.2.1",
+    "@graphql-codegen/introspection": "2.1.0",
+    "@graphql-codegen/typescript": "2.2.4",
+    "@graphql-codegen/typescript-operations": "2.1.8",
+    "@graphql-codegen/typescript-react-apollo": "3.1.6",
+    "@types/node": "^16.11.4",
+    "@types/react": "^17.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "autoprefixer": "^10.2.4",
+    "eslint": "<8.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "postcss": "^8.2.10",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.0.3",
+    "typescript": "^4.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "yarn lint",
+      "yarn format"
+    ]
+  }
+}
